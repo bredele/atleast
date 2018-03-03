@@ -19,3 +19,10 @@ test('should resolve with a promise passed as an argument', assert => {
   const promise = atleast(Promise.resolve('hello'))
   promise.then(val => assert.equal(val, 'hello'))
 })
+
+
+test('should reject with a promise passed as an argument', assert => {
+  assert.plan(1)
+  const promise = atleast(Promise.reject('hello'))
+  promise.then(null, reason => assert.equal(reason, 'hello'))
+})
