@@ -11,7 +11,7 @@
 module.exports = (promise, ms) => {
   return new Promise((resolve, reject) => {
     const timeout = () => resolve(promise)
-    if (ms) setTimeout(() => resolve(promise), ms)
+    if (ms) setTimeout(timeout, ms)
     else timeout()
   })
 }
