@@ -39,10 +39,25 @@ test('should resolve argument even if not a promise', assert => {
 
 test('should timeout the promise with a given time in ms', assert => {
   assert.plan(1)
-  var date = Date.now()
+  var star = Date.now()
   const promise = atleast('hello', 500)
   promise.then(val => {
-    if (Date.now() - date < 500) assert.end('failed')
+    if (Date.now() - star < 500) assert.end('failed')
+    else assert.equal(val, 'hello')
+  })
+})
+
+
+test('resolve sa promise after the given time in ms even if promise is resolved before', assert => {
+  assert.plan(1)
+  var start = Date.now()
+  const promise = atleast(
+    atleast('hello', 400),
+    500
+  )
+  promise.then(val => {
+    const end = Date.now() - start
+    if (end < 500 && end > 600) assert.end('failed')
     else assert.equal(val, 'hello')
   })
 })
