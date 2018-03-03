@@ -1,0 +1,27 @@
+{
+  "name": "atleast",
+  "version": "1.0.0",
+  "description": "Minimum time a promise should take to resolve or reject",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bredele/atleast.git"
+  },
+  "keywords": [
+    "promise",
+    "async",
+    "timeout"
+  ],
+  "author": "Olivier Wietrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/atleast/issues"
+  },
+  "homepage": "https://github.com/bredele/atleast#readme",
+  "devDependencies": {
+    "tape": "^4.9.0"
+  }
+}
