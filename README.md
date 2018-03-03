@@ -5,7 +5,7 @@
   [![Downloads](https://img.shields.io/npm/dm/atleast.svg)](http://npm-stat.com/charts.html?package=atleast)
   [![pledge](https://bredele.github.io/contributing-guide/community-pledge.svg)](https://github.com/bredele/contributing-guide/blob/master/guidelines.md)
 
-Function decorator that transforms anything into a promise that resolved *at least* after a give time in ms.
+Create a timed out promise from a given value and time in miliseconds. 
 
 ## Usage
 
