@@ -1,7 +1,9 @@
 
 
-module.exports = (promise) => {
+module.exports = (promise, ms) => {
   return new Promise((resolve, reject) => {
-    resolve(promise)
+    const timeout = () => resolve(promise)
+    if (ms) setTimeout(() => resolve(promise), ms)
+    else timeout()
   })
 }

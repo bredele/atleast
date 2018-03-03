@@ -35,3 +35,14 @@ test('should resolve argument even if not a promise', assert => {
   const promise = atleast('hello')
   promise.then(val => assert.equal(val, 'hello'))
 })
+
+
+test('should timeout the promise with a given time in ms', assert => {
+  assert.plan(1)
+  var date = Date.now()
+  const promise = atleast('hello', 500)
+  promise.then(val => {
+    if (Date.now() - date < 500) assert.end('failed')
+    else assert.equal(val, 'hello')
+  })
+})
